@@ -1,0 +1,16 @@
+CREATE_TABLE_ITEMS = """CREATE TABLE IF NOT EXISTS items (
+    id NVARCHAR(10) PRIMARY KEY,
+    release_dt VARCHAR(8)
+)"""
+
+INSERT_INTO_TABLE_ITEMS = """INSERT INTO items VALUES (?, ?)"""
+
+UPDATE_RELEASE_DATE_BY_ITEM_ID = """UPDATE items SET release_dt = ? WHERE id = ?"""
+
+SELECT_RELEASE_DATE_BY_ITEM_ID = """SELECT id, release_dt FROM items WHERE id = ?"""
+
+SELECT_RELEASE_DATE_BY_SERIES = """SELECT id, release_dt FROM items WHERE id LIKE ? ORDER BY id"""
+
+SELECT_ALL_ITEMS_ORDER_BY_ITEM_ID = """SELECT id, release_dt FROM items ORDER BY id"""
+
+SELECT_ALL_ITEMS_ORDER_BY_RELEASE_DATE = """SELECT id, release_dt FROM items ORDER BY release_dt DESC"""
